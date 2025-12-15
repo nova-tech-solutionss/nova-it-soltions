@@ -53,7 +53,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-4xl md:text-6xl lg:text-7xl mb-8 max-w-5xl mx-auto leading-tight"
           >
-            {['Transform', 'Your', 'Business', 'with', 'AI,', 'Custom', 'Software', '&', 'IT', 'Solutions'].map((word, i) => (
+            {['Software', 'That', 'Fits', 'the', 'Way,', 'Your', 'Business', 'Actually', 'Works'].map((word, i) => (
               <motion.span
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
@@ -70,15 +70,25 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.5 }}
-            className="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto"
+            className="text-xl md:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto"
           >
-            We help U.S. businesses scale with intelligent automation, cutting-edge software, and enterprise-grade IT infrastructure.
+            We design and build <strong className='italic bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent'>intelligent software systems</strong> for organizations where manual work, fragmented tools, and risk are slowing everything down.
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.8 }}
+            className="text-lg italic md:text-xl text-gray-600 mb-12 max-w-3xl mx-auto"
+          >
+            We help organizations make better decisions about how work should move — then build the systems to support it.
+
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.8 }}
+            transition={{ duration: 0.8, delay: 2.0 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20"
           >
             <Button
@@ -92,9 +102,9 @@ export default function HeroSection() {
             <Button
               variant="outline"
               size="lg"
-              onClick={() => router.push('/services')}
+              onClick={() => router.push('/how-we-work')}
             >
-              Explore Our Services
+              See How We Work
             </Button>
           </motion.div>
 

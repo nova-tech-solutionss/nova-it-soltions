@@ -8,6 +8,7 @@ import FeatureSection from "./components/FeatureSection";
 import CTASec from "./components/CTA";
 import { CTASection } from "./components/CTASection";
 import { useRouter } from "next/navigation";
+import UnravelingFlow from './components/UravelingFlow'
 
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
     <div className="min-h-screen">
         <NewsLetterModal/>
         <HeroSection />
+        <UnravelingFlow />
         <ServiceSection />
         <FeatureSection />
         <WhySection />

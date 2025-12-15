@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import Script from "next/script";
+import AOSInit from "../components/AOSProvider";
 config.autoAddCss = false;
 
 
@@ -41,6 +42,7 @@ export default function PublicLayout({
         `}
       </Script>
       <body >
+        <AOSInit />
         <NavBar />
         {children}
         <Footer />

@@ -17,13 +17,14 @@ export default function ServiceSection() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            {/* Title Pill */}
-            <div className="inline-block px-4 py-1 border border-black rounded-full text-small text-black">
-              <h2>Our Core Service</h2>
-            </div>
+            
             {/* Section Heading */}
-            <p className="lg:text-6xl md:text-4xl text-3xl font-regular text-gray-900 max-w-5xl mx-auto">
-            From AI-powered automation to custom enterprise software, we deliver solutions that drive real business value.
+            <h2 className="md:text-4xl text-3xl font-regular text-gray-900 max-w-5xl mx-auto mb-8">
+            Most Software Adds Complexity. We Remove It
+            </h2>
+
+            <p className='text-xl md:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto'>
+              Inside growing organizations, work rarely breaks in obvious ways. It slows. It duplicates. It gets passed between people, tools, and spreadsheets — until no one has a clear picture anymore.
             </p>
             
           </motion.div>

@@ -4,12 +4,115 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { ChevronDown } from "lucide-react";
+
+
 
 export default function NavBar() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
     const router = useRouter();
 
+    const industries = [
+                    {
+                        name: 'Healthcare',
+                        href: '/industries/healthcare'
+                    },,
+                    {
+                        name: 'Legal',
+                        href: '/industries/legal'
+                    },
+                    {
+                        name: '(AEC)',
+                        href: '/industries/aec'
+                    },
+                    {
+                        name: 'Government',
+                        href: '/industries/government'
+                    },
+                    {
+                        name: 'Other',
+                        href: '/industries/other'
+                    },
+
+                ]
+    
+    const what_section = [
+        {
+            name: 'Fix Operational Systems',
+            href: '/services/custom-enterprise-software'
+        },
+        {
+            name: "Simiplify Workflows",
+            href: '/services/digital-experience'
+        },
+        {
+            name: "Reduce Manual Work",
+            href: '/services/ai-automation'
+        },
+        {
+            name: 'Improve Visibility & Control',
+            href: '/services/enterprise-portal'
+        }
+    ]
+
+    const how_section = [
+        {
+            name: 'Our Approach',
+            href: '/how-we-work/approach',
+
+        },
+        {
+            name: 'Clarity Before Code',
+            href: '/how-we-work/clarity-before-code'
+
+        },
+        {
+            name: 'Security & Complaince',
+            href: '/how-we-work/security-and-complaince'
+        }
+    ]
+
+    const company = [
+        {
+            name: 'About Us',
+            href: '/about'
+        },{
+            name: 'Blogs',
+            href: '/blogs'
+        },
+        {
+            name: 'Contact Us',
+            href: '/contact'
+        }
+    ]
+
+    const Dropdown = ({ label, items }: { label: string; items: any[] }) => (
+            <div
+            className="relative"
+            onMouseEnter={() => setOpenDropdown(label)}
+            onMouseLeave={() => setOpenDropdown(null)}
+            >
+            <button className="flex flex-inline items-center justify-center text-sm text-gray-700 transition-transform duration-200 hover:scale-105 hover:text-blue-600 transition">
+                {label} <ChevronDown className="w-4 h-4" />
+            </button>
+
+            {openDropdown === label && (
+                <div className="absolute top-full mt-2 w-64 bg-white shadow-lg rounded-lg py-2 z-50">
+                {items.map((item) => (
+                    <Link
+                    key={item.name}
+                    href={item.href}
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                    {item.name}
+                    </Link>
+                ))}
+                </div>
+            )}
+            </div>
+        );
     return (
     <nav className="sticky top-0 z-50 bg-white w-full px-6 py-4 relative">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -44,61 +147,67 @@ export default function NavBar() {
 
             {/* Desktop Nav Links */}
             <div className="hidden md:flex items-center space-x-8">
-            <Link href="/about" className="text-sm text-gray-700 hover:text-black transition">
-                About
-            </Link>
-            <Link href="/services" className="text-sm text-gray-700 hover:text-black transition">
-                Services
-            </Link>
-            <Link href="/services/#pricing" className="text-sm text-gray-700 hover:text-black transition">
-                Pricing
-            </Link>
-            <Link href="/services/#process" className="text-sm text-gray-700 hover:text-black transition">
-                Process
-            </Link>
-            <Link
-                href="/login"
-                className="bg-blue-600 text-white text-sm font-medium px-4 py-2 rounded-full transform transition-transform duration-200 hover:scale-100 hover:opacity-50 "
-            >
-                Login
-            </Link>
-            <Link
-                href="/contact"
-                className="bg-black text-white text-sm font-medium px-4 py-2 rounded-full hover:opacity-90 transition"
-            >
-                Contact Us
-            </Link>
+                <Dropdown label="What We Do" items={what_section} />
+                <Dropdown label="Industries" items={industries} />
+                <Dropdown label="How We Work" items={how_section} />
+                <Dropdown label="Company" items={company} />
+                <Link href="/case-studies" className="flex flex-inline items-center justify-center text-sm text-gray-700 transition-transform duration-200 hover:scale-105 hover:text-blue-600 transition">
+                    Case Studies
+                </Link>
+                <Link
+                    href="/login"
+                    className="bg-blue-600 text-white text-sm font-medium px-4 py-2 rounded-full transform transition-transform duration-200 hover:scale-105 hover:opacity-80 "
+                >
+                    Login
+                </Link>
+                <Link
+                    href="/contact"
+                    className="bg-black text-white text-sm font-medium px-4 py-2 rounded-full transform transition-transform duration-200 hover:scale-105 hover:opacity-80 "
+                >
+                    Contact Us
+                </Link>
             </div>
         </div>
 
         {/* Mobile Dropdown */}
         <div
             className={`md:hidden absolute left-0 top-full w-full bg-white px-6 overflow-hidden transition-all duration-300 ${
-            menuOpen ? 'max-h-[300px] py-6' : 'max-h-0 py-0'
+            menuOpen ? 'max-h-[900px] py-6' : 'max-h-0 py-0'
             }`}
         >
-            <div className="flex flex-col items-center space-y-4">
-            <Link href="/about" onClick={() => setMenuOpen(false)} className="text-gray-700 text-sm">
-                About
-            </Link>
-            <Link href="/services" onClick={() => setMenuOpen(false)} className="text-gray-700 text-sm">
-                Services
-            </Link>
-            <Link href="#pricing" onClick={() => setMenuOpen(false)} className="text-gray-700 text-sm">
-                Pricing
-            </Link>
-            <Link href="#process" onClick={() => setMenuOpen(false)} className="text-gray-700 text-sm">
-                Process
-            </Link>
-            <button
-                onClick={() => {
-                    setMenuOpen(false)
-                    router.push('/contact')
-                }}
-                className="bg-black text-white text-sm font-medium px-4 py-2 rounded-full hover:opacity-90 transition"
-            >
-                Get Started
-            </button>
+            <div className="flex flex-col items-center text-center space-y-4">
+
+                {[{ label: 'What We Do', items: what_section },
+                    { label: 'Industries', items: industries },
+                    { label: 'How We Work', items: how_section },
+                    { label: 'Company', items: company }
+                ].map(section => (
+                    <div key={section.label}>
+                    <p className=" font-bold text-lg text-gray-900 mb-2">{section.label}</p>
+                    {section.items.map(item => (
+                        <Link
+                        key={item?.name}
+                        href={item?.href || '#'}
+                        onClick={() => setMenuOpen(false)}
+                        className="block text-md text-gray-700 py-1"
+                        >
+                        {item?.name}
+                        </Link>
+                    ))}
+                    </div>
+                ))}
+                <Link href="/case-studies" onClick={() => setMenuOpen(false)} className="text-lg font-medium text-gray-900">
+                    Case Studies
+                </Link>
+                <button
+                    onClick={() => {
+                        setMenuOpen(false)
+                        router.push('/contact')
+                    }}
+                    className="bg-black text-white text-sm font-medium px-4 py-2 rounded-full hover:opacity-90 transition"
+                >
+                    Get Started
+                </button>
             </div>
         </div>
     </nav>
