@@ -6,7 +6,7 @@
 .section {
   background: radial-gradient(circle at top, #101622, var(--bg));
   color: var(--text);
-  padding: 8rem 1.5rem 6rem;
+  padding: 8rem 1.5rem 0rem;
   position: relative;
   overflow: hidden;
 }
@@ -58,7 +58,7 @@
 .flowWrapper {
   position: relative;
   max-width: 1000px;
-  margin: 0 auto 6rem;
+  margin: 0 auto 4rem;
 }
 
 .flowLine {

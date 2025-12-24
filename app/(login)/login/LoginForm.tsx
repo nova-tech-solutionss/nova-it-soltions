@@ -1,13 +1,17 @@
 'use client';
 import { useState } from "react";
-import { loginUser, setAuthCookies, redirectToTenant } from "@/app/lib/auth";
+import { loginUser, setAuthCookies } from "@/app/lib/auth";
+import { useRouter } from "next/navigation";
+
 
 export default function LoginForm() {
 
     const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [error, setError] = useState('')
-  const [loading, setLoading] = useState(false)
+    const [password, setPassword] = useState('')
+    const [error, setError] = useState('')
+    const [loading, setLoading] = useState(false)
+
+    const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -15,15 +19,18 @@ export default function LoginForm() {
     setLoading(true)
 
     try {
-      const data = await loginUser(email, password)
+      // Call login action function from lib auth
+      await loginUser(email, password)
       
-      // Set access and refresh token cookies
-      setAuthCookies(data.access, data.refresh)
+      // Do not store cookie or local storage
       
-      // Redirect to tenant subdomain
-      redirectToTenant(data.user.tenant_slug)
+      // Redirect to dashboard - dashboard will handle logic for tokens.
+      router.replace(`dashboard/`)
+
     } catch (err) {
       setError('Invalid credentials. Please try again.')
+      
+    }finally{
       setLoading(false)
     }
   }

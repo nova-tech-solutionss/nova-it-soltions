@@ -34,7 +34,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
-, "app/(public)/components/UravelingFlow.tsx"  ],
+, "app/(public)/components/UravelingFlow.tsx", "next.config.js"  ],
   "exclude": [
     "node_modules"
   ]

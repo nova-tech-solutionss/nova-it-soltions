@@ -1,8 +1,10 @@
 // lib/auth.ts
 
+
 export async function loginUser(email: string, password: string) {
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/login/`, {
     method: 'POST',
+    credentials: "include",
     headers: {
       'Content-Type': 'application/json',
     },
@@ -11,10 +13,14 @@ export async function loginUser(email: string, password: string) {
 
   if (!response.ok) {
     throw new Error('Login failed')
+  }else {
+    console.log(response)
+    console.log("Login Success")
   }
 
   const data = await response.json()
-  return data // Should include: { access, refresh, user: { tenant_slug, ... } }
+  console.log(data) 
+  return response.json // Should include: { access, refresh, user: { tenant_slug, ... } }
 }
 
 
@@ -36,6 +42,7 @@ export async function register(
             password,
             first_name,
             last_name,
+
             tenant_name : tenantName
         })
     })
@@ -75,31 +82,3 @@ export function clearAuthCookies() {
     document.cookie = 'refresh=; path=/; max-age=0';
 }
 
-export function redirectToTenant(tenantSlug: string) {
-  // Get current hostname to determine if we're in local development
-  const currentHost = window.location.hostname
-  const isLocalhost = currentHost.includes('lvh.me') || currentHost === '127.0.0.1'
-  
-  const protocol = isLocalhost ? 'http' : 'https'
-  const baseDomain = isLocalhost ? 'lvh.me' : (process.env.NEXT_PUBLIC_BASE_DOMAIN || 'novadev.solutions')
-  const port = isLocalhost ? ':3000' : ''
-  
-  const tenantUrl = `${protocol}://${tenantSlug}.${baseDomain}${port}/dashboard`
-  
-  window.location.href = tenantUrl
-}
-
-export function redirectToLogin() {
-
-  // Get current hostname to determine if we're in local development
-  const currentHost = window.location.hostname
-  const isLocalhost = currentHost.includes('lvh.me') || currentHost === '127.0.0.1'  
-
-  const protocol = isLocalhost ? 'https' : 'http'
-  const baseDomain = isLocalhost ? 'lvh.me' : (process.env.NEXT_PUBLIC_BASE_DOMAIN || 'novadev.solutions')
-  const port = isLocalhost ? ':3000' : ''
-  
-  const loginUrl = `${protocol}://${baseDomain}${port}/login`
-  
-  window.location.href = loginUrl
-}

@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { register, setAuthCookies, redirectToTenant } from "@/app/lib/auth";
 
 export default function RegisterForm() {
 
@@ -13,6 +14,7 @@ export default function RegisterForm() {
     const router = useRouter();
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
+    
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -26,28 +28,9 @@ export default function RegisterForm() {
         }
 
         try {
-            console.log('Submitting registration form with:', { email, password, first_name, last_name, role });
-            setRole('admin'); // Ensure role is set to 'admin' for registration
-            const res = await fetch('/api/register/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email, password, first_name, last_name, role }),
-            });
-
-            const data = await res.json();
-            console.log('Response data:', data);
-
-            if (res.status === 200) {
-                // If registration is successful, redirect to the dashboard
-                console.log('Registration successful');
-                router.push('/onboarding');
-            } else {
-                // If registration fails, set the error message
-                console.error('Registration failed:', data);
-                setError(data.error || 'Registration failed');
-            }
+            const data = await register(email, password, first_name, last_name, role);
+            console.log('Registration successful:', data);
+            router.push('/onboarding');
 
         } catch (error) {
             console.error('Error during registration:', error);

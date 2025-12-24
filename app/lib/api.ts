@@ -1,35 +1,49 @@
-import { cookies } from "next/headers";
+// lib/api.ts
+"use client";
 
-// lib/api.ts - Helper for authenticated API Calls
-export async function fetchWithAuth(url: string, options: RequestInit = {}){ 
-    const cookieStore = await cookies();
-    const accessToken = cookieStore.get('access')?.value;
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
-    const headers = {
-        'Content-Type' : 'application/json',
-        ...(accessToken && {'Authorization' : `Bearer ${accessToken}`}),
-        ...options.headers,
+/**
+ * Factory that returns an authenticated fetch helper
+ * Scoped to the dashboard (client-side only)
+ */
+export function createFetchWithAuth(accessToken: string | null) {
+  return async function fetchWithAuth(
+    url: string,
+    options: RequestInit = {}
+  ) {
+    const headers = new Headers();
+    headers.set("Content-Type", "application/json");
+
+    // Merge headers
+    if (options.headers) {
+      if (options.headers instanceof Headers) {
+        options.headers.forEach((value, key) => headers.set(key, value));
+      } else if (Array.isArray(options.headers)) {
+        options.headers.forEach(([key, value]) =>
+          headers.set(key, value)
+        );
+      } else {
+        Object.entries(options.headers).forEach(([key, value]) => {
+          if (value !== undefined) headers.set(key, value);
+        });
+      }
     }
 
-    const response = await fetch(url, {
-        ...options,
-        headers,
-    })
-
-    // If token expired, handle refresh or redirect
-    if (response.status === 401){
-        // Implement token refresh logic here if have refresh token
-        // Or redirect to login
-        console.log('Expired Refresh Token')
-        return null
+    if (accessToken) {
+      headers.set("Authorization", `Bearer ${accessToken}`);
     }
 
-    // If token expired, handle refresh or redirect
+    const response = await fetch(`${API_URL}${url}`, {
+      ...options,
+      headers,
+      credentials: "include", // REQUIRED for refresh cookie
+    });
+
     if (response.status === 401) {
-        // Implement token refresh logic here if you have refresh tokens
-        // Or redirect to login
-        return null
+      throw new Error("Unauthorized");
     }
 
-    return response
+    return response;
+  };
 }

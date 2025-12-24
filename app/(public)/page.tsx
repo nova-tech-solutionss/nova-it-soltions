@@ -9,6 +9,8 @@ import CTASec from "./components/CTA";
 import { CTASection } from "./components/CTASection";
 import { useRouter } from "next/navigation";
 import UnravelingFlow from './components/UravelingFlow'
+import ProblemFraming from "./components/ProblemFacing";
+import HowWeHelpSection from "./components/HowWeHelpSection";
 
 
 export default function Home() {
@@ -21,6 +23,8 @@ export default function Home() {
         <NewsLetterModal/>
         <HeroSection />
         <UnravelingFlow />
+        <ProblemFraming />
+        <HowWeHelpSection />
         <ServiceSection />
         <FeatureSection />
         <WhySection />

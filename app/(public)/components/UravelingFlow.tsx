@@ -167,7 +167,7 @@ export default function UnravelingFlow() {
       data-aos-delay='100'
       className="
         font-medium
-        text-2xl md:text-4xl lg:text-6xl
+        text-4xl md:text-4xl lg:text-6xl
         mt-10 mb-8
         max-w-6xl
         mx-auto sm:mx-0
@@ -268,13 +268,6 @@ export default function UnravelingFlow() {
         Each solution looks different - because each operation is different.
       </p>
 
-      <div 
-        data-aos='zoom-in'
-        data-aos-delay='90'
-      className='mx-auto items-center max-w-sm text-center'>
-        <button
-        className='bg-blue-500 text-white rounded-lg px-6 py-4'>GET STARTED</button>
-      </div>
     </section>
   );
 }
