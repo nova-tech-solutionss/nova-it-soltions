@@ -6,8 +6,8 @@ export default function Footer() {
             <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between">
                 {/* Logo and Brand */}
                 <div className="flex items-center space-x-2">
-                    <Image src={'/images/nova_logo.png'} alt="Nova Suite" width={34} height={34} />
-                    <span className="font-semibold text-gray-900 text-2xl">NovaSuite</span>
+                    <Image src={'/images/nova_logo.png'} alt="Nova NOVA IT Solutions" width={34} height={34} />
+                    <span className="font-semibold text-gray-900 text-2xl">NOVA IT Solutions</span>
                 </div>
 
                 {/* Copyright */}
