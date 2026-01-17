@@ -1,84 +1,87 @@
-// lib/auth.ts
+// app/lib/auth.ts
 
+export type TenantInfo = {
+  id?: string;
+  slug?: string;
+  name?: string;
+  subdomain?: string;
+};
 
-export async function loginUser(email: string, password: string) {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/login/`, {
-    method: 'POST',
-    credentials: "include",
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ email, password }),
-  })
+// ✅ Helper: construir dominio tenant (si usas subdominios)
+export function getTenantBaseUrl(tenantSlug?: string) {
+  if (!tenantSlug) return "https://novadev.solutions";
 
-  if (!response.ok) {
-    throw new Error('Login failed')
-  }else {
-    console.log(response)
-    console.log("Login Success")
+  // ejemplo: tenant.novadev.solutions
+  return `https://${tenantSlug}.novadev.solutions`;
+}
+// ✅ Register (si tu lógica ya la tiene, mantenla; si no, esto es placeholder seguro)
+export type RegisterPayload = {
+  email: string;
+  password: string;
+  first_name?: string;
+  last_name?: string;
+  role?: string;
+};
+
+export async function register(payload: RegisterPayload) {
+  const res = await fetch("/api/register", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+
+  if (!res.ok) {
+    const msg = await res.text();
+    throw new Error(msg || "Register failed");
   }
 
-  const data = await response.json()
-  console.log(data) 
-  return response.json // Should include: { access, refresh, user: { tenant_slug, ... } }
+  return res.json();
 }
 
 
-export async function register(
-    email: string, 
-    password: string,
-    tenantName: string,
-    first_name: string,
-    last_name : string,
-) {
+// ✅ Register (si tu lógica ya la tiene, mantenla; si no, esto es placeholder seguro)
+export async function loginUser(payload: { email: string; password: string }) {
+  const res = await fetch("/api/login", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
 
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/register/`, {
-        method: "POST",
-        headers: {
-            'Content-Type' : 'application/json'
-        },
-        body : JSON.stringify({
-            email,
-            password,
-            first_name,
-            last_name,
-
-            tenant_name : tenantName
-        })
-    })
-
-    if(!response.ok){
-        throw new Error("Signup failedd")
-    }
-
-    const data = await response.json()
-
-    return data // Should include : {access, refresh, user: {tenant_slug, ....}}
-
-}
-
-
-export function setAuthCookies(accessToken: string, refreshToken?: string) {
-
-  const hostname = window.location.hostname  
-  const isProduction = process.env.NODE_ENV === 'production'
-  const domain = isProduction ? 'novadev.solutions' : undefined
-  
-  // Set access token
-  document.cookie = `access=${accessToken}; path=/; max-age=86400; SameSite=Lax${
-    isProduction ? '; Secure' : ''
-  }${domain ? `; Domain=${domain}` : ''}`
-  
-  // Set refresh token
-  if (refreshToken) {
-    document.cookie = `refresh=${refreshToken}; path=/; max-age=604800; SameSite=Lax${
-      isProduction ? '; Secure' : ''
-    }${domain ? `; Domain=${domain}` : ''}`
+  if (!res.ok) {
+    const msg = await res.text();
+    throw new Error(msg || "Login failed");
   }
+
+  return res.json();
 }
 
+// ✅ Guardar cookies auth (placeholder; ajusta si ya tenías cookies concretas)
+export function setAuthCookies(token: string) {
+  // ejemplo simple (si usas cookies httpOnly reales se setean desde API)
+  document.cookie = `auth_token=${token}; path=/; SameSite=Lax`;
+}
+
+// ✅ Limpiar cookies auth
 export function clearAuthCookies() {
-    document.cookie = 'access=; path=/; max-age=0';
-    document.cookie = 'refresh=; path=/; max-age=0';
+  document.cookie = "auth_token=; Max-Age=0; path=/; SameSite=Lax";
 }
 
+
+export function redirectToLogin(router: { push: (path: string) => void }) {
+  router.push("/login");
+}
+
+
+export function redirectToTenant(
+  router: { push: (path: string) => void },
+  tenantSlug?: string
+) {
+  // si todavía no tienes tenants reales, manda al dashboard
+  if (!tenantSlug) {
+    router.push("/dashboard");
+    return;
+  }
+
+  // si manejas tenants por ruta:
+  router.push(`/tenants/${tenantSlug}`);
+}

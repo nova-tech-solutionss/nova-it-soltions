@@ -20,7 +20,7 @@ export default function LoginForm() {
 
     try {
       // Call login action function from lib auth
-      await loginUser(email, password)
+      await loginUser({ email, password })
       
       // Do not store cookie or local storage
       
