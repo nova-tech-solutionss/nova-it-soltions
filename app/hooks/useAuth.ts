@@ -1,39 +1,52 @@
-'use client'
-
+// app/hooks/useAuth.ts
 import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { clearAuthCookies, redirectToLogin } from "../lib/auth";
 
+type AuthUser = {
+  id?: string;
+  email?: string;
+  name?: string;
+} | null;
+
 export function useAuth() {
-    const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const router = useRouter();
+  const router = useRouter();
+  const [user, setUser] = useState<AuthUser>(null);
+  const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        checkAuth();
-    }, []);
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        // Ajusta esta ruta si tu API es diferente
+        const res = await fetch("/api/me", { method: "GET" });
 
-    const checkAuth = async () => {
-        try {
-            const response = await fetch('/api/auth/user')
-            if (response.ok){
-                const userData = await response.json()
-                setUser(userData);
-            }else {
-                setUser(null);
-            }
-        }catch(error){
-            console.error('Error in useAuth.ts api')
-            setUser(null);
-        }finally {
-            setLoading(false);
+        if (!res.ok) {
+          setUser(null);
+          setLoading(false);
+          return;
         }
-    }
 
-    const logout = () => {
-        clearAuthCookies()
-        redirectToLogin()
-    }
+        const data = await res.json();
+        setUser(data?.user ?? data ?? null);
+      } catch (error) {
+        setUser(null);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-    return {user, loading, logout, refetch: checkAuth}
+    fetchUser();
+  }, []);
+
+  const logout = () => {
+    clearAuthCookies();
+    redirectToLogin(router);
+  };
+
+  return {
+    user,
+    loading,
+    isAuthenticated: Boolean(user),
+    logout,
+  };
 }

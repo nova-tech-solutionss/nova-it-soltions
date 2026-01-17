@@ -2,6 +2,14 @@
 User-agent: *
 Allow: /
 
+# *
+User-agent: *
+Disallow: /login
+Disallow: /register
+Disallow: /dashboard
+Disallow: /admin
+Disallow: /api
+
 # Host
 Host: https://novadev.solutions
 

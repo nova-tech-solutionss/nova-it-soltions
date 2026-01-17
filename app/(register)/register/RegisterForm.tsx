@@ -28,7 +28,7 @@ export default function RegisterForm() {
         }
 
         try {
-            const data = await register(email, password, first_name, last_name, role);
+            const data = await register({ email, password, first_name, last_name, role });
             console.log('Registration successful:', data);
             router.push('/onboarding');
 
