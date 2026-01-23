@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  web:
+    container_name: nexus-frontend
+    build: .
+    ports:
+      - "3000:3000"
+    dns:
+      - 1.1.1.1
+      - 8.8.8.8
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development

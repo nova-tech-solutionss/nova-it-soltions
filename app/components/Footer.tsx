@@ -7,12 +7,12 @@ export default function Footer() {
                 {/* Logo and Brand */}
                 <div className="flex items-center space-x-2">
                     <Image src={'/images/nova_logo.png'} alt="Nova Suite" width={34} height={34} />
-                    <span className="font-semibold text-gray-900 text-2xl">NovaSuite</span>
+                    <span className="font-semibold text-gray-900 text-2xl">Nova</span>
                 </div>
 
                 {/* Copyright */}
                 <p className="text-sm text-gray-500 mt-4 sm:mt-0">
-                    &copy;{new Date().getFullYear()} <a href="https://www.novadev.solutions">Nova.</a> All rights reserved.
+                    &copy;{new Date().getFullYear()} <a href="https://www.novadev.solutions">NovaDev LLC</a> All rights reserved.
                 </p>
 
             </div>

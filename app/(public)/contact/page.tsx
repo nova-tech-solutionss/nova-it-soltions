@@ -5,7 +5,7 @@ import { Input } from './components/Input';
 import { Textarea } from './components/Textarea';
 import { Button } from '../components/Button';
 import { GeometricShape } from '../components/GeometricShape';
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle, Link } from 'lucide-react';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -130,7 +130,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-[#DCE1EB] max-w-3xl mx-auto"
+            className="text-xl text-gray-500 max-w-3xl mx-auto"
           >
             Ready to transform your business with cutting-edge technology? We're here to help. Schedule a free consultation today.
           </motion.p>
@@ -222,7 +222,7 @@ export default function ContactPage() {
             <div className="relative p-8 lg:p-12">
               {!isSubmitted ? (
                 <>
-                  <h2 className="mb-8 text-center">Send Us a Message</h2>
+                  <h2 className="mb-8 text-center text-white">Send Us a Message</h2>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <Input
@@ -333,9 +333,13 @@ export default function ContactPage() {
             <p className="text-xl text-[#DCE1EB] mb-8 max-w-2xl mx-auto">
               Schedule a free 30-minute consultation with our team to discuss your project.
             </p>
-            <Button variant="primary" size="lg">
+
+            <Link href="https://calendly.com/web-novadev/nova-kick-off-call" target="_blank" >
+              <Button variant="primary" size="lg">
               Book Free Consultation
             </Button>
+            </Link>
+            
           </motion.div>
         </div>
       </section>

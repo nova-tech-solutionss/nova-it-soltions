@@ -78,9 +78,6 @@ export default function NavBar() {
         {
             name: 'About Us',
             href: '/about'
-        },{
-            name: 'Blogs',
-            href: '/blogs'
         },
         {
             name: 'Contact Us',
@@ -118,8 +115,11 @@ export default function NavBar() {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center space-x-2">
-                <Image src={'/images/nova_logo.png'} alt="Nova Suite" width={34} height={34} />
-                <span className="text-2xl font-medium text-gray-900">Nova IT Solutions</span>
+                <Link href="/" className="inline-flex gap-2 items-center">
+                    <Image src={'/images/nova_logo.png'} alt="Nova Suite" width={34} height={34} />
+                    <span className="text-2xl font-medium text-gray-900 inline ml-4">Nova</span>
+                </Link>
+                
             </div>
 
             {/* Burger Icon */}
@@ -147,19 +147,11 @@ export default function NavBar() {
 
             {/* Desktop Nav Links */}
             <div className="hidden md:flex items-center space-x-8">
-                <Dropdown label="What We Do" items={what_section} />
-                <Dropdown label="Industries" items={industries} />
-                <Dropdown label="How We Work" items={how_section} />
                 <Dropdown label="Company" items={company} />
-                <Link href="/case-studies" className="flex flex-inline items-center justify-center text-sm text-gray-700 transition-transform duration-200 hover:scale-105 hover:text-blue-600 transition">
-                    Case Studies
+                <Link href="/services" className="flex flex-inline items-center justify-center text-sm text-gray-700 transition-transform duration-200 hover:scale-105 hover:text-blue-600 transition">
+                    Services
                 </Link>
-                <Link
-                    href="/login"
-                    className="bg-blue-600 text-white text-sm font-medium px-4 py-2 rounded-full transform transition-transform duration-200 hover:scale-105 hover:opacity-80 "
-                >
-                    Login
-                </Link>
+                
                 <Link
                     href="/contact"
                     className="bg-black text-white text-sm font-medium px-4 py-2 rounded-full transform transition-transform duration-200 hover:scale-105 hover:opacity-80 "
@@ -196,9 +188,6 @@ export default function NavBar() {
                     ))}
                     </div>
                 ))}
-                <Link href="/case-studies" onClick={() => setMenuOpen(false)} className="text-lg font-medium text-gray-900">
-                    Case Studies
-                </Link>
                 <button
                     onClick={() => {
                         setMenuOpen(false)

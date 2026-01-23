@@ -73,14 +73,7 @@ export function CaseStudyCard({ company, industry, problem, solution, results, d
         ))}
       </div>
 
-      {/* CTA */}
-      <motion.div
-        className="flex items-center space-x-2 text-[#4E7BFF] cursor-pointer relative z-10"
-        whileHover={{ x: 5 }}
-      >
-        <span>View full case study</span>
-        <ArrowRight size={18} />
-      </motion.div>
+      
 
       {/* Decorative element */}
       <div className="absolute -right-20 -bottom-20 w-60 h-60 bg-[#4E7BFF]/5 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700" />

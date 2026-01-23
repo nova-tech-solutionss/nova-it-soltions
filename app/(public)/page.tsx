@@ -39,10 +39,7 @@ export default function Home() {
                 text: 'Work With Us',
                 onClick: () => router.push('/contact'),
               }}
-              secondaryButton={{
-                text: 'View Our Work',
-                onClick: () => router.push('/case-studies'),
-              }}
+              
             />
           </div>
         </section>
