@@ -55,20 +55,7 @@ export default function CaseSection() {
             />
           </div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <Button
-              variant="outline"
-              size="lg"
-              onClick={() => router.push('/case-studies')}
-            >
-              View All Case Studies
-            </Button>
-          </motion.div>
+          
         </div>
       </section>
     )

@@ -41,7 +41,7 @@ export default function ServiceSection() {
                 'Computer vision solutions',
               ]}
               delay={0}
-              onClick={() => router.push('/services#ai')}
+              onClick={() => router.push('/services')}
             />
             <ServiceCard
               icon={<Code2 size={32} />}
@@ -54,7 +54,7 @@ export default function ServiceSection() {
                 'Cloud infrastructure',
               ]}
               delay={0.1}
-              onClick={() => router.push('/services#software')}
+              onClick={() => router.push('/services')}
             />
             <ServiceCard
               icon={<Palette size={32} />}
@@ -67,7 +67,7 @@ export default function ServiceSection() {
                 'Performance optimization',
               ]}
               delay={0.2}
-              onClick={() => router.push('/services#web')}
+              onClick={() => router.push('/services')}
             />
           </div>
         </div>
