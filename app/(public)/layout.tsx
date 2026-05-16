@@ -40,7 +40,6 @@ export default function PublicLayout({
       <AOSInit />
       <NavBar />
       {children}
-      <Footer />
     </>
   );
 }

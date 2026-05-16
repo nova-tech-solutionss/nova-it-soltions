@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { motion, Variants } from 'framer-motion';
 import { ParticleField } from './ParticleField';
 import { GeometricShape } from './GeometricShape';
@@ -51,6 +52,17 @@ export default function SystemReframeSection() {
         {/* Geometric Shapes */}
         <GeometricShape variant="circle" size={400} className="absolute top-20 -left-60" delay={0} />
         <GeometricShape variant="square" size={250} className="absolute bottom-20 left-1/4" delay={4} />
+
+        {/* Background Image Overlay - Desktop and Tablet Only */}
+        <div className="absolute inset-0 hidden md:block">
+          <Image
+            src="/images/section2_background.png"
+            alt="Section Background"
+            fill
+            className="object-cover"
+            priority={false}
+          />
+        </div>
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         <div className="relative grid grid-cols-[auto_1fr] gap-x-10">
           
@@ -106,7 +118,7 @@ export default function SystemReframeSection() {
               variants={fadeUpVariants}
             >
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-neutral-900 leading-[1.1]">
-                You don’t need another disconnected IT project.
+                You don't need another disconnected IT project.
                 <br />
                 You need a technology partner built around your mission.
               </h2>

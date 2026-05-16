@@ -9,7 +9,7 @@ export default function CaseSection() {
     const router = useRouter();
 
     return (
-        <section className="relative py-32 px-6 lg:px-20">
+        <section className="relative py-5 px-6 lg:px-20">
         <div className="max-w-[1400px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

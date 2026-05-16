@@ -124,7 +124,7 @@ export default function UnravelingFlow() {
 
 
   return (
-    <section ref={sectionRef} className={styles.section}>
+    <section ref={sectionRef} className={`${styles.section} relative overflow-hidden mt-20`}>
       {/* Knot SVG */}
       <div 
         data-aos='zoom-in'

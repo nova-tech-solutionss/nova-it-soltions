@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import UnravelingFlow from './components/UravelingFlow'
 import ProblemFraming from "./components/ProblemFacing";
 import HowWeHelpSection from "./components/HowWeHelpSection";
+import Footer from "./components/Footer";
 
 
 export default function Home() {
@@ -28,7 +29,7 @@ export default function Home() {
         <WhySection />
         <CaseSection />
         {/* CTA */}
-        <section className="py-32 px-6 lg:px-20">
+        <section className="py-32 px-2 lg:px-10">
           <div className="max-w-[1200px] mx-auto">
             <CTASection
               title="Modernize With Confidence"
@@ -41,6 +42,7 @@ export default function Home() {
             />
           </div>
         </section>
+        <Footer />
     </div>
     </>
   );

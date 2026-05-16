@@ -1,5 +1,6 @@
 'use client'
 import {motion} from 'motion/react';
+import Image from 'next/image';
 import { Button } from './Button';
 import { ParticleField } from './ParticleField';
 import { GeometricShape } from './GeometricShape';
@@ -17,12 +18,11 @@ export default function HeroSection() {
 
     return (
       <section className="relative h-screen flex flex-col">
-        {/* Particle Field */}
-        <ParticleField />
+        
 
         {/* Geometric Shapes */}
-        <GeometricShape variant="circle" size={400} className="absolute top-20 -left-40" delay={0} />
-        <GeometricShape variant="square" size={250} className="absolute bottom-20 left-1/4" delay={4} />
+        <GeometricShape variant="circle" size={400} className="absolute top-20 -left-40 z-10" delay={0} />
+        <GeometricShape variant="square" size={250} className="absolute bottom-20 left-1/4 z-10" delay={4} />
 
         {/* Grid overlay */}
         <div 
@@ -33,6 +33,17 @@ export default function HeroSection() {
             backgroundSize: '100px 100px',
           }}
         />
+
+        {/* Background Image Overlay - Desktop, Tablet and Mobile */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/second_hero_background.png"
+            alt="Hero Background"
+            fill
+            className="object-cover"
+            priority={true}
+          />
+        </div>
 
         <div className="flex-1 flex flex-col items-center justify-center text-center px-6 lg:px-20 relative z-10">
           <motion.div
