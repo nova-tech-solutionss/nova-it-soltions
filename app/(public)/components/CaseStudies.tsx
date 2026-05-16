@@ -23,32 +23,32 @@ export default function CaseSection() {
             </div>
             {/* Section Heading */}
             <p className="lg:text-6xl md:text-4xl text-3xl font-regular text-gray-900 max-w-3xl mx-auto">
-            See how we've helped businesses transform their operations and achieve unprecedented growth.
+            See how modern IT, software, and staffing support can improve service delivery, compliance, and operational control.
             </p>
             
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
             <CaseStudyCard
-              company="FinTech Innovations"
-              industry="Financial Services"
-              problem="Manual processes causing delays and errors in loan processing, resulting in customer dissatisfaction."
-              solution="Developed an AI-powered loan automation system with real-time decision-making capabilities."
+              company="Public Finance Program"
+              industry="Government & Finance"
+              problem="Manual reviews, scattered records, and inconsistent reporting slowed approvals and increased audit risk."
+              solution="Designed a secure workflow system with role-based access, automated status tracking, and compliance-ready reporting."
               results={[
-                { label: 'Faster Processing', value: '85%' },
-                { label: 'Error Reduction', value: '95%' },
-                { label: 'Cost Savings', value: '$2M' },
+                { label: 'Faster Reviews', value: '85%' },
+                { label: 'Fewer Errors', value: '95%' },
+                { label: 'Audit Clarity', value: '100%' },
               ]}
               delay={0}
             />
             <CaseStudyCard
-              company="HealthCore Systems"
+              company="Regional Health Operations"
               industry="Healthcare"
-              problem="Fragmented patient data across multiple legacy systems hindering care coordination."
-              solution="Built a unified healthcare platform integrating all systems with HIPAA-compliant data management."
+              problem="Fragmented systems and staffing gaps made it difficult to coordinate secure work across departments."
+              solution="Built a unified operations portal with HIPAA-aware data handling, request tracking, and technical support workflows."
               results={[
-                { label: 'System Integration', value: '100%' },
-                { label: 'Patient Satisfaction', value: '+42%' },
+                { label: 'System Visibility', value: '100%' },
+                { label: 'Service Speed', value: '+42%' },
                 { label: 'Time Saved', value: '15hrs/wk' },
               ]}
               delay={0.2}

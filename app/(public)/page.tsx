@@ -1,6 +1,5 @@
 'use client'
 import HeroSection from "./components/Hero";
-import NewsLetterModal from "../components/NewsLetterModal";
 import ServiceSection from "./components/Services";
 import WhySection from "./components/WhyUs";
 import CaseSection from "./components/CaseStudies";
@@ -20,7 +19,6 @@ export default function Home() {
   return (
     <>
     <div className="min-h-screen">
-        <NewsLetterModal/>
         <HeroSection />
         <UnravelingFlow />
         <ProblemFraming />
@@ -33,8 +31,8 @@ export default function Home() {
         <section className="py-32 px-6 lg:px-20">
           <div className="max-w-[1200px] mx-auto">
             <CTASection
-              title="Join Us on This Journey"
-              description="Partner with a team that's committed to your success and passionate about technology innovation."
+              title="Modernize With Confidence"
+              description="Partner with an IT consulting team that understands secure software, technical staffing, compliance, and regulated operations."
               primaryButton={{
                 text: 'Work With Us',
                 onClick: () => router.push('/contact'),

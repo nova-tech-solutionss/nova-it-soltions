@@ -39,7 +39,13 @@ export default function MobileHeader({ onMenuClick }: MobileHeaderProps) {
     >
       <div className="flex items-center justify-between p-4">
         <div className="flex items-center space-x-2">
-          <Image src={'/images/nova_logo.png'} alt="Nova Suite" width={32} height={32} />
+          <Image
+            src={'/images/nova_logo.png'}
+            alt="Nova Suite"
+            width={32}
+            height={32}
+            style={{ width: '32px', height: 'auto' }}
+          />
           <span className="text-xl font-medium text-gray-900">Nova</span>
         </div>
         

@@ -73,15 +73,15 @@ export default function SystemReframeSection() {
                 className="text-sm uppercase tracking-widest text-neutral-500 mb-8"
                 variants={listItemVariants}
               >
-                If your team:
+                If your organization:
               </motion.p>
 
               <div className="space-y-6">
                 {[
-                  'Relies on workarounds instead of workflows.',
-                  'Manages critical processes across too many tools.',
-                  'Spends senior time on tasks that should be automated.',
-                  'Worries about compliance, visibility, or scale.',
+                  'Relies on legacy systems, workarounds, or disconnected tools.',
+                  'Needs better visibility across programs, vendors, and teams.',
+                  'Spends senior time on tasks that should be automated or staffed differently.',
+                  'Worries about compliance, security, continuity, or scale.',
                 ].map((item) => (
                   <motion.p
                     key={item}
@@ -106,9 +106,9 @@ export default function SystemReframeSection() {
               variants={fadeUpVariants}
             >
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-neutral-900 leading-[1.1]">
-                You don’t need another platform.
+                You don’t need another disconnected IT project.
                 <br />
-                You need a system built around your operation.
+                You need a technology partner built around your mission.
               </h2>
             </motion.div>
 
@@ -124,12 +124,12 @@ export default function SystemReframeSection() {
               variants={fadeUpVariants}
             >
               <p className="text-xl md:text-2xl text-neutral-900 mb-6">
-                That’s what we build.
+                That’s where we help.
               </p>
 
               <p className="text-base md:text-lg text-neutral-600 leading-relaxed">
-                As a software partner, we design, build, and evolve these systems
-                alongside your team.
+                As an IT consulting partner, we design software, support infrastructure,
+                provide technical staffing, and strengthen compliance alongside your team.
               </p>
             </motion.div>
           </div>

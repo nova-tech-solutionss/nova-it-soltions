@@ -173,7 +173,7 @@ export default function UnravelingFlow() {
         mx-auto sm:mx-0
         text-center sm:text-left sm:ml-30
         leading-tight">
-        MOST SOFTWARE ADDS COMPLEXITY. <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">WE REMOVE IT.</span> 
+        MODERNIZATION SHOULD REDUCE RISK. <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">WE MAKE IT PRACTICAL.</span> 
       </h2>
 
       <p 
@@ -186,9 +186,8 @@ export default function UnravelingFlow() {
         mb-8
         text-center sm:text-left sm:ml-30
       ">
-        Inside growing organizations, work rarely breaks in obvious ways. It slows.
-        It duplicates. It gets passed between people, tools, and spreadsheets — until
-        no one has a clear picture anymore.
+        Inside government and regulated organizations, technology rarely fails all at once. It slows,
+        fragments, and creates gaps between people, systems, compliance requirements, and service delivery.
       </p>
 
       <p 
@@ -200,9 +199,8 @@ export default function UnravelingFlow() {
         mx-auto sm:mx-0
         text-center sm:text-left sm:ml-30
       ">
-        <strong className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">WE STEP IN.</strong> Not to “add software,” but to redesign how
-        information moves, decisions are made, and work actually gets done — then
-        build systems that support that reality.
+        <strong className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">WE STEP IN.</strong> Not to “add software,” but to align IT, workflows,
+        staffing, and compliance around how your organization actually operates.
       </p>
 
       <div className={styles.flowWrapper}>
@@ -215,8 +213,8 @@ export default function UnravelingFlow() {
             className={`${styles.node} ${styles.right}`}
           >
             <span className={styles.index}>01</span>
-            <h3>CONSOLIDATING SCATTERED TOOLS</h3>
-            <p>into a single internal system.</p>
+            <h3>CONSOLIDATING SCATTERED SYSTEMS</h3>
+            <p>into secure, manageable operating environments.</p>
           </div>
 
           <div
@@ -224,8 +222,8 @@ export default function UnravelingFlow() {
             className={`${styles.node} ${styles.left}`}
           >
             <span className={styles.index}>02</span>
-            <h3>ELIMINATING MANUAL STEPS</h3>
-            <p>that quietly drain hours every week.</p>
+            <h3>REDUCING MANUAL WORK</h3>
+            <p>that slows teams and increases compliance risk.</p>
           </div>
 
           <div
@@ -234,8 +232,8 @@ export default function UnravelingFlow() {
             className={`${styles.node} ${styles.right}`}
           >
             <span className={styles.index}>03</span>
-            <h3>HELPING TEAMS DECIDE WHAT NOT TO BUILD</h3>
-            <p>before complexity compounds.</p>
+            <h3>GUIDING SMART TECHNOLOGY DECISIONS</h3>
+            <p>before procurement, implementation, or risk grows harder to manage.</p>
           </div>
 
            <div
@@ -244,8 +242,8 @@ export default function UnravelingFlow() {
             className={`${styles.node} ${styles.left}`}
           >
             <span className={styles.index}>04</span>
-            <h3>INTRODUCING AUTOMATION</h3>
-            <p>where humans shouldn't be doing repetitive work.</p>
+            <h3>INTRODUCING SECURE AUTOMATION</h3>
+            <p>where repeatable work needs consistency, auditability, and speed.</p>
           </div>
 
           <div
@@ -254,8 +252,8 @@ export default function UnravelingFlow() {
             className={`${styles.node} ${styles.right}`}
           >
             <span className={styles.index}>05</span>
-            <h3>CREATING A CLEARER FRONT DOOR</h3>
-            <p>so work enters the business cleanly.</p>
+            <h3>STRENGTHENING SERVICE DELIVERY</h3>
+            <p>so requests, data, and decisions move through the right channels.</p>
           </div>
 
         </div>
@@ -265,7 +263,7 @@ export default function UnravelingFlow() {
         data-aos='zoom-in'
         data-aos-delay='125'
         className='text-center text-black mb-10 text-3xl '>
-        Each solution looks different - because each operation is different.
+        Each solution looks different - because each mission, mandate, and operating environment is different.
       </p>
 
     </section>

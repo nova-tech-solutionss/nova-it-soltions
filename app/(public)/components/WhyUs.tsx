@@ -21,7 +21,7 @@ export default function WhySection() {
             </div>
             {/* Section Heading */}
             <p className="lg:text-6xl md:text-4xl text-3xl font-regular text-gray-900 max-w-3xl mx-auto">
-          We combine technical excellence with business acumen to deliver solutions that exceed expectations.
+          We combine software engineering, IT operations, staffing support, and compliance awareness for organizations that cannot afford unreliable technology.
             </p>
             
           </motion.div>
@@ -29,26 +29,26 @@ export default function WhySection() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <FeatureCard
               icon={<Zap size={28} />}
-              title="Lightning Fast"
-              description="We deliver high-performance solutions optimized for speed and efficiency."
+              title="Responsive Delivery"
+              description="We move quickly while respecting procurement, security, and operational realities."
               delay={0}
             />
             <FeatureCard
               icon={<Shield size={28} />}
-              title="Enterprise Security"
-              description="Bank-level security protocols protect your data and applications."
+              title="Compliance-Minded"
+              description="We design with security, access control, documentation, and audit readiness in mind."
               delay={0.1}
             />
             <FeatureCard
               icon={<Target size={28} />}
-              title="Results-Driven"
-              description="Focused on measurable outcomes that impact your bottom line."
+              title="Mission-Focused"
+              description="Focused on measurable outcomes that improve service delivery and operational control."
               delay={0.2}
             />
             <FeatureCard
               icon={<Users size={28} />}
-              title="Expert Team"
-              description="Senior engineers with decades of combined experience."
+              title="Technical Talent"
+              description="Software, IT, and staffing expertise to support both projects and ongoing operations."
               delay={0.3}
             />
           </div>

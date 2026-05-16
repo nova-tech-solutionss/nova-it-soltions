@@ -20,11 +20,11 @@ export default function ServiceSection() {
             
             {/* Section Heading */}
             <h2 className="md:text-4xl text-3xl font-regular text-gray-900 max-w-5xl mx-auto mb-8">
-            Most Software Adds Complexity. We Remove It
+            IT Services Built for Regulated Work
             </h2>
 
             <p className='text-xl md:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto'>
-              Inside growing organizations, work rarely breaks in obvious ways. It slows. It duplicates. It gets passed between people, tools, and spreadsheets — until no one has a clear picture anymore.
+              We help government teams, contractors, and regulated organizations modernize systems, strengthen compliance, and fill technical gaps without adding unnecessary complexity.
             </p>
             
           </motion.div>
@@ -32,13 +32,13 @@ export default function ServiceSection() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <ServiceCard
               icon={<Brain size={32} />}
-              title="AI & Automation"
-              description="Transform operations with intelligent automation, machine learning, and AI-powered insights."
+              title="IT Services & Automation"
+              description="Improve operations with secure automation, managed IT support, and practical process modernization."
               features={[
-                'Process automation',
-                'Predictive analytics',
-                'Natural language processing',
-                'Computer vision solutions',
+                'Workflow automation',
+                'Managed IT support',
+                'Reporting and visibility',
+                'Secure process improvement',
               ]}
               delay={0}
               onClick={() => router.push('/services')}
@@ -46,25 +46,25 @@ export default function ServiceSection() {
             <ServiceCard
               icon={<Code2 size={32} />}
               title="Custom Software & IT Systems"
-              description="Enterprise-grade software tailored to your unique business requirements and workflows."
+              description="Compliance-aware applications and internal systems tailored to your policies, teams, and workflows."
               features={[
                 'Custom web applications',
                 'API development & integration',
                 'Database architecture',
-                'Cloud infrastructure',
+                'Cloud and infrastructure support',
               ]}
               delay={0.1}
               onClick={() => router.push('/services')}
             />
             <ServiceCard
               icon={<Palette size={32} />}
-              title="Web Development"
-              description="High-performance, scalable websites and web apps built with cutting-edge technologies."
+              title="IT Staffing & Compliance"
+              description="Technical talent and advisory support for organizations that need secure delivery and audit-ready operations."
               features={[
-                'Modern responsive design',
-                'E-commerce platforms',
-                'Progressive web apps',
-                'Performance optimization',
+                'Technical staffing support',
+                'Compliance documentation',
+                'Security process alignment',
+                'Operational continuity',
               ]}
               delay={0.2}
               onClick={() => router.push('/services')}

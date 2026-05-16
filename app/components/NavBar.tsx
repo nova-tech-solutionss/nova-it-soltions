@@ -116,7 +116,13 @@ export default function NavBar() {
             {/* Logo */}
             <div className="flex items-center space-x-2">
                 <Link href="/" className="inline-flex gap-2 items-center">
-                    <Image src={'/images/nova_logo.png'} alt="Nova Suite" width={34} height={34} />
+                    <Image
+                        src={'/images/nova_logo.png'}
+                        alt="Nova Suite"
+                        width={34}
+                        height={34}
+                        style={{ width: '34px', height: 'auto' }}
+                    />
                     <span className="text-2xl font-medium text-gray-900 inline ml-4">Nova</span>
                 </Link>
                 

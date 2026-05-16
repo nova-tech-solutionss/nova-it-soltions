@@ -58,27 +58,27 @@ export default function HowWeHelpSection() {
               {[
                 {
                   icon: Workflow,
-                  text: 'Work moves through one clear system instead of five tools',
+                  text: 'Programs, requests, and approvals move through clearer digital workflows',
                 },
                 {
                   icon: Layers,
                   text:
-                    'Manual steps disappear without disrupting existing processes',
+                    'Manual steps are reduced without disrupting essential operations',
                 },
                 {
                   icon: ArrowRight,
                   text:
-                    'Information reaches the right people without follow-ups or guesswork',
+                    'Information reaches the right people with stronger visibility and accountability',
                 },
                 {
                   icon: Gauge,
                   text:
-                    'Repetitive tasks stop consuming high-value time',
+                    'Staff capacity improves because repetitive IT and administrative work is handled smarter',
                 },
                 {
                   icon: Sparkles,
                   text:
-                    'Technology supports decisions instead of creating noise — because the right decisions were made early',
+                    'Technology supports compliance, reporting, and service delivery instead of creating noise',
                 },
               ].map(({ icon: Icon, text }) => (
                 <motion.div
@@ -131,13 +131,13 @@ export default function HowWeHelpSection() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <p className="text-base md:text-lg text-neutral-700">
-              internal systems replacing spreadsheets and patchwork tools
+              secure internal systems replacing spreadsheets, legacy tools, and manual handoffs
             </p>
             <p className="text-base md:text-lg text-neutral-700">
-              automation handling routine decisions and document flow
+              automation supporting routine approvals, records, reporting, and document flow
             </p>
             <p className="text-base md:text-lg text-neutral-700">
-              digital entry points that connect directly into operations
+              technical staffing and IT support aligned with day-to-day operations
             </p>
           </div>
         </motion.div>
@@ -148,7 +148,7 @@ export default function HowWeHelpSection() {
             But to your team, it simply feels like:
           </p>
           <p className="text-2xl md:text-3xl text-neutral-900">
-            things finally work the way they should.
+            the work feels clearer, safer, and easier to manage.
           </p>
         </motion.div>
       </motion.div>

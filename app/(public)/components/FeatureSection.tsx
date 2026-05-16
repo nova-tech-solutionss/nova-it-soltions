@@ -12,33 +12,33 @@ export default function FeatureSection() {
     const features = [
     {
       icon: faCogs,
-      title: "AI Automation",
-      description: "Automate repetitive tasks with AI and streamline workflows to free your team for high-value work."
+      title: "Workflow Automation",
+      description: "Automate repeatable tasks, approvals, and handoffs so teams can focus on higher-value public service and operations."
     },
     {
       icon: faChartLine,
-      title: "Real-Time Dashboards",
-      description: "Make smarter decisions with real-time insights tailored to your team and industry. Track customer activity and conversion data with instant, actionable dashboards. "
+      title: "Operational Dashboards",
+      description: "Give leaders clearer visibility into programs, requests, staffing, compliance status, and service performance."
     },
     {
       icon: faUserShield,
-      title: "Enterprise-Grade Security",
-      description: "Manage access control with role-based permissions to protect sensitive CRM data. GDPR, HIPAA, and SOC2-ready"
+      title: "Compliance-Ready Security",
+      description: "Support role-based access, secure data handling, documentation, and alignment with regulated operating requirements."
     },
     {
       icon: faUsers,
-      title: "Lead & Client Analysis",
-      description: "Track leads, clients, and contacts effortlessly and close more deals with less effort."
+      title: "Case & Request Tracking",
+      description: "Track requests, cases, vendors, clients, and internal work from intake through completion with less manual follow-up."
     },
     {
       icon: faFileAlt,
-      title: "Document Handling",
-      description: "Secure, organized document workflows tailored for industries like legal, healthcare, and finance."
+      title: "Secure Document Handling",
+      description: "Organize records, forms, approvals, and supporting documentation for teams with strict security and retention needs."
     },
     {
       icon: faPuzzlePiece,
-      title: "Custom Toolkits by Industry",
-      description: "Use vertical SaaS modules built for your specific industry—from consulting to construction—no clutter, just what you need."
+      title: "Custom Toolkits by Mission",
+      description: "Build practical modules for government, healthcare, legal, finance, and field operations without unnecessary clutter."
     },
   ];
 
@@ -52,7 +52,7 @@ export default function FeatureSection() {
         </div>
         {/* Section Heading */}
         <h2 className="lg:text-6xl md:text-4xl text-3xl font-regular text-gray-900 max-w-3xl mx-auto">
-        Powerful Features for Modern CRM Success
+        Practical Capabilities for Secure Operations
         </h2>
       </div>
 

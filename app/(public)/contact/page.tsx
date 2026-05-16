@@ -76,25 +76,25 @@ export default function ContactPage() {
     {
       icon: <Mail size={24} />,
       title: 'Email',
-      detail: 'hello@novaitsolutions.com',
-      link: 'mailto:hello@novaitsolutions.com',
+      detail: 'proposals@novateam.team',
+      link: 'mailto:proposals@novateam.team',
     },
     {
       icon: <Phone size={24} />,
       title: 'Phone',
-      detail: '+1 (555) 123-4567',
-      link: 'tel:+15551234567',
+      detail: '919-351-5040',
+      link: 'tel:919-351-5040',
     },
     {
       icon: <MapPin size={24} />,
-      title: 'Office',
-      detail: '123 Tech Boulevard, San Francisco, CA 94105',
-      link: 'https://maps.google.com',
+      title: 'Headquarters',
+      detail: '301 S McDowel St Suite 125, Charlotte, NC 28204',
+      link: 'https://maps.google.com/maps/search/301+S+McDowel+St+Suite+125+Charlotte+NC+28204',
     },
     {
       icon: <Clock size={24} />,
       title: 'Business Hours',
-      detail: 'Mon - Fri: 9:00 AM - 6:00 PM PST',
+      detail: 'Mon - Fri: 8:00 AM - 5:00 PM EST',
       link: null,
     },
   ];
@@ -123,7 +123,7 @@ export default function ContactPage() {
             transition={{ delay: 0.1 }}
             className="mb-8"
           >
-            Let's Build Something Amazing Together
+            Government Contracting Solutions
           </motion.h1>
 
           <motion.p
@@ -132,7 +132,7 @@ export default function ContactPage() {
             transition={{ delay: 0.2 }}
             className="text-xl text-gray-500 max-w-3xl mx-auto"
           >
-            Ready to transform your business with cutting-edge technology? We're here to help. Schedule a free consultation today.
+            Partner with a trusted government contractor for secure, compliant technology solutions. Our team specializes in delivering mission-critical systems to federal, state, and local agencies.
           </motion.p>
         </div>
       </section>
@@ -222,7 +222,7 @@ export default function ContactPage() {
             <div className="relative p-8 lg:p-12">
               {!isSubmitted ? (
                 <>
-                  <h2 className="mb-8 text-center text-white">Send Us a Message</h2>
+                  <h2 className="mb-8 text-center text-white">Submit Your Proposal Request</h2>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <Input
@@ -246,7 +246,7 @@ export default function ContactPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <Input
-                        label="Company Name"
+                        label="Agency/Organization Name"
                         name="company"
                         value={formData.company}
                         onChange={handleChange}
@@ -267,15 +267,16 @@ export default function ContactPage() {
                         onChange={handleChange}
                         className="w-full px-4 py-3 bg-white/5 border border-[#4E7BFF]/20 hover:border-[#4E7BFF]/40 focus:border-[#4E7BFF] focus:shadow-lg focus:shadow-[#4E7BFF]/20 rounded-lg text-white focus:outline-none transition-all appearance-none cursor-pointer"
                       >
-                        <option value="" className="bg-[#0A0F1F]">Select a Service</option>
-                        <option value="ai-automation" className="bg-[#0A0F1F]">AI & Automation</option>
-                        <option value="custom-software" className="bg-[#0A0F1F]">Custom Software</option>
-                        <option value="web-development" className="bg-[#0A0F1F]">Web Development</option>
-                        <option value="it-consulting" className="bg-[#0A0F1F]">IT Consulting</option>
+                        <option value="" className="bg-[#0A0F1F]">Select a Service Area</option>
+                        <option value="federal-it" className="bg-[#0A0F1F]">Federal IT Solutions</option>
+                        <option value="cybersecurity" className="bg-[#0A0F1F]">Cybersecurity & Compliance</option>
+                        <option value="cloud-infrastructure" className="bg-[#0A0F1F]">Cloud Infrastructure</option>
+                        <option value="custom-development" className="bg-[#0A0F1F]">Custom Software Development</option>
+                        <option value="modernization" className="bg-[#0A0F1F]">Legacy System Modernization</option>
                         <option value="other" className="bg-[#0A0F1F]">Other</option>
                       </select>
                       <label className="absolute -top-2 left-4 text-xs bg-[#0A0F1F] px-2 text-[#A9B3C9]">
-                        Service Interested In
+                        Service Area
                       </label>
                     </div>
 
@@ -328,17 +329,23 @@ export default function ContactPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center p-12 lg:p-16 rounded-3xl bg-gradient-to-br from-[#4E7BFF]/10 to-transparent border border-[#4E7BFF]/20"
-          >
-            <h2 className="mb-6">Prefer to Talk Directly?</h2>
+          ><h2>Ready to Get Started?</h2>
             <p className="text-xl text-[#DCE1EB] mb-8 max-w-2xl mx-auto">
-              Schedule a free 30-minute consultation with our team to discuss your project.
+              Contact our government solutions team directly at <strong>proposals@novateam.team</strong> or call <strong>919-351-5040</strong> to discuss your agency's needs.
             </p>
 
-            <Link href="https://calendly.com/web-novadev/nova-kick-off-call" target="_blank" >
-              <Button variant="primary" size="lg">
-              Book Free Consultation
-            </Button>
-            </Link>
+            <div className="flex gap-4 justify-center flex-wrap">
+              <a href="mailto:proposals@novateam.team">
+                <Button variant="primary" size="lg">
+                  Email Us
+                </Button>
+              </a>
+              <a href="tel:919-351-5040">
+                <Button variant="primary" size="lg">
+                  Call Us
+                </Button>
+              </a>
+            </div>
             
           </motion.div>
         </div>
